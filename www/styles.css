@@ -1,0 +1,182 @@
+html, body {
+  height: calc(100% - 10px);
+  background: #000000;
+}
+
+.background-gradient {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.75+72,0+83,0.75+92 */
+  background: -moz-linear-gradient(-45deg,  rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.75) 72%, rgba(0,0,0,0) 83%, rgba(0,0,0,0.75) 92%, rgba(0,0,0,0.75) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.75) 72%,rgba(0,0,0,0) 83%,rgba(0,0,0,0.75) 92%,rgba(0,0,0,0.75) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(0,0,0,0.75) 0%,rgba(0,0,0,0.75) 72%,rgba(0,0,0,0) 83%,rgba(0,0,0,0.75) 92%,rgba(0,0,0,0.75) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf000000', endColorstr='#bf000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.grid-side {
+  height: 100%;
+}
+
+.header {
+  background-color: var(--color-image-average) !important;
+  display: flex;
+  align-items: center;
+}
+
+.header .title {
+  position: absolute;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+}
+
+.segment.header,
+.segment.side,
+.segment.main {
+  background-image: url('dark-mosaic.png') !important;
+}
+
+.body-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+}
+.body-background img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  opacity: .1;
+  filter: blur(26px);
+}
+
+.ui.raised.segment {
+  margin: 0 !important;
+}
+
+.pixel-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#image img {
+  width: 100%;
+}
+
+.grid-wrapper .ui.checkbox {
+  max-width: 17px;
+}
+
+.grid-wrapper .ui.checkbox,
+.grid-wrapper .ui.checkbox .label {
+  max-height: 0;
+  max-width: 0;
+  padding: 0;
+  margin: 0 -4px -4px 0;
+  border: 1px solid;
+}
+
+.ui.placeholder:not(.overlay) {
+  height: 20px;
+  width: 20px;
+  margin: 0 !important;
+
+  -webkit-animation: none !important;
+  animation: none !important;
+}
+
+#gridCells {
+  width: fit-content;
+}
+
+.grid-wrapper {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell-container {
+  position: relative;
+}
+
+.ui.placeholder.overlay {
+  position: absolute !important;
+  z-index: 1;
+  -webkit-animation: placeholderShimmer 5s linear !important;
+  animation: placeholderShimmer 5s linear !important;
+  animation-iteration-count: infinite !important;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent !important;
+  opacity: .2;
+}
+
+
+.inverted .ui.fluid.selection.dropdown {
+  border: 1px solid rgba(255,255,255,.15);
+  background: #1b1c1d;
+  color: rgba(255,255,255,.8);
+}
+
+.inverted .ui.selection.dropdown:hover {
+    border-color: rgba(255,255,255,.25);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.inverted .ui.selection.dropdown input {
+    color: #fff;
+}
+
+.inverted .ui.selection.active.dropdown .menu, .inverted .ui.selection.active.dropdown:hover {
+    border-color: rgba(255,255,255,.15);
+}
+.inverted .ui.dropdown .menu .selected.item, .inverted .ui.dropdown.selected {
+    background: rgba(255,255,255,.15);
+    color: rgba(255,255,255,.8);
+}
+.inverted .ui.dropdown .menu .active.item {
+    background: 0 0;
+    color: rgba(255,255,255,.8);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.inverted .ui.selection.dropdown .menu>.item {
+    border-top: 1px solid #242526;
+}
+.inverted .ui.dropdown .menu {
+    background: #1b1c1d;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid rgba(255,255,255,.15);
+}
+.inverted .ui.dropdown .menu>.item {
+    color: rgba(255,255,255,.8);
+}
+.inverted .ui.selection.visible.dropdown>.text:not(.default) {
+    color: rgba(255,255,255,.9);
+}
+
+
+.ui.inverted.toggle.checkbox label:before {
+    background-color: rgba(47, 47, 47, .9)!important;
+}
