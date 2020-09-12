@@ -1,10 +1,9 @@
 function(session, input, output) {
   images <- reactiveValues(
-    image = NULL,
+    image = load.image(glue('https://picsum.photos/{baseSize}/{baseSize}?.jpg')),
     thumbnail = NULL,
     filteredThumbnail = NULL
   )
-  images$image <- load.image(glue('https://picsum.photos/{baseSize}/{baseSize}?.jpg'))
 
   observeEvent(input$downloadImage, {
     session$sendCustomMessage("downloadImage", list(id = "gridCells", name = "pixelated-image"))
@@ -16,26 +15,15 @@ function(session, input, output) {
 
   observeEvent(input$gridType, {
     output$pixelType <- renderUI({
-      darkify(
-        selectInput,
-        "rateType",
-        "Pixel type",
-        modifyList(list("Randomize" = "random"), icons)
-      ) %>% tagAppendAttributes(class = ifelse(input$gridType != "ratingCell", "hidden", ""))
+      darkify(selectInput,"rateType", "Pixel type", modifyList(list("Randomize" = "random"), icons)) %>%
+      tagAppendAttributes(class = ifelse(input$gridType != "ratingCell", "hidden", ""))
     })
   })
 
   observeEvent(input$gridType, {
     output$loaderType <- renderUI({
-      darkify(
-        selectInput,
-        "loaderWidthType",
-        "Loader type",
-        list(
-          "Double line" = "double",
-          "Single line" = "single"
-        )
-      ) %>% tagAppendAttributes(class = ifelse(input$gridType != "loaderCell", "hidden", ""))
+      darkify(selectInput, "loaderWidthType", "Loader type", loaders) %>%
+      tagAppendAttributes(class = ifelse(input$gridType != "loaderCell", "hidden", ""))
     })
   }, ignoreInit = TRUE)
 
@@ -71,21 +59,11 @@ function(session, input, output) {
     images$thumbnail <- resize(images$image, thumbnailSize, thumbnailSize)
 
     output$bodyBackground <- renderImage({
-      outfile <- tempfile(fileext='.png')
-      jpeg(outfile, width = baseSize, height = baseSize)
-      save.image(images$image, outfile)
-      dev.off()
-
-      list(src = outfile, alt = "Main picture")
+      generateSourceImage(images$image, "Main picture")
     }, deleteFile = TRUE)
 
     output$image <- renderImage({
-      outfile <- tempfile(fileext='.png')
-      jpeg(outfile, width = baseSize, height = baseSize)
-      save.image(images$image, outfile)
-      dev.off()
-
-      list(src = outfile, alt = "Background picture")
+      generateSourceImage(images$image, "Background picture")
     }, deleteFile = TRUE)
   })
 
@@ -93,7 +71,6 @@ function(session, input, output) {
     images$filteredThumbnail <- images$thumbnail
 
     if(!is.null(images$filteredThumbnail)) {
-
       if(input$grayScale) {
         images$filteredThumbnail <- grayscale(images$thumbnail)
       } else {
@@ -114,13 +91,7 @@ function(session, input, output) {
     newPalette <- paletteValues(images$filteredThumbnail, 5)
 
     output$paletteColors <- renderUI({
-      tags$style(
-        paste(
-          ":root {",
-          newPalette,
-          "}"
-        )
-      )
+      tags$style(paste(":root {", newPalette, "}"))
     })
     session$sendCustomMessage("updatePaletteText", list(values = newPalette))
   })

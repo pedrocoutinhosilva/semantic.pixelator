@@ -90,3 +90,12 @@ paletteValues <- function(image, numberColors) {
       glue("--palette-{index}: rgb({redValue * 256}, {greenValue * 256}, {blueValue * 256});")
   }), collapse = "")
 }
+
+generateSourceImage <- function(src, name) {
+  outfile <- tempfile(fileext='.png')
+  jpeg(outfile, width = baseSize, height = baseSize)
+  save.image(src, outfile)
+  dev.off()
+
+  list(src = outfile, alt = name)
+}

@@ -11,3 +11,8 @@ icons <- list(
   "Fishes" = "fish",
   "Apples" = "fruit-apple"
 )
+
+loaders <- list(
+  "Double line" = "double",
+  "Single line" = "single"
+)
