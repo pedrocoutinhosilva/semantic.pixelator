@@ -18,6 +18,10 @@
   }
 }
 
+#main-page {
+  height: calc(100% - 10px) !important;  
+}
+
 #randomize,
 #reload {
   margin: 0;

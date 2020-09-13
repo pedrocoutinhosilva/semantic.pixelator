@@ -6,6 +6,7 @@ semanticPage(
 
 
   gridPanel(
+    id = "main-page",
     columns = "350px 1fr",
     rows = "75px 1fr",
     areas = c(
