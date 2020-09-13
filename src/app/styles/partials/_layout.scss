@@ -14,7 +14,7 @@
   }
 
   & > *:not(:first-of-type) label {
-    margin-top: 15px !important;
+    margin-top: 8px !important;
   }
 }
 
@@ -55,4 +55,14 @@
   img {
     width: 100%;
   }
+}
+
+.sidebar-wrapper {
+  height: 100%;
+  overflow: auto;
+}
+
+.sidebar-options {
+  overflow: auto;
+  padding: 0 10px 10px 0;
 }

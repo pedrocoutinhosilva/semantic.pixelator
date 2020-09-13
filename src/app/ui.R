@@ -24,7 +24,7 @@ semanticPage(
       class = "sidebar-wrapper",
       gridPanel(class = "ui raised segment inverted sidebar-container",
         gap = "15px",
-        rows = "50px 322px 1fr 40px 120px",
+        rows = "35px 322px 1fr 40px 120px",
 
         div(
           id = "image-picker-buttons",
