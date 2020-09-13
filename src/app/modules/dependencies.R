@@ -19,7 +19,7 @@ cssCellRules <- function() {
 
 appDependencies <- function() {
   tagList(
-    tags$link(rel = "stylesheet", href = "styles/styles.css"),
+    tags$link(rel = "stylesheet", href = "css/sass.min.css"),
     tags$script(src = "scripts/dom-to-image.min.js"),
     tags$script(src = "scripts/filesaver.js"),
     tags$script(src = "scripts/downloader.js"),

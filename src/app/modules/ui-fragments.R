@@ -92,6 +92,7 @@ generateGrid <- function(baseSize, cellCallback, ...) {
   gridPanel(
     rows = glue("repeat({thumbnailSize}, 20px)"),
     columns = glue("repeat({thumbnailSize}, 20px)"),
+    id = "pixelCellContainer",
     class = "cell-container",
     div(class = "ui placeholder overlay"),
 

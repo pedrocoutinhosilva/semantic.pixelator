@@ -6,7 +6,7 @@ function(session, input, output) {
   )
 
   observeEvent(input$downloadImage, {
-    session$sendCustomMessage("downloadImage", list(id = "gridCells", name = "pixelated-image"))
+    session$sendCustomMessage("downloadImage", list(id = "pixelCellContainer", name = "pixelated-image"))
   })
 
   observeEvent(input$downloadPalette, {

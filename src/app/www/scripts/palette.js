@@ -16,8 +16,6 @@ let RGBToHex = function(rgb) {
 }
 
 let updatePaletteText = function(options) {
-  console.log(options)
-
   let colors = options.values.split(";")
     .splice(0, 5)
     .map(entry => RGBToHex(entry.split(": ")[1]))
