@@ -18,10 +18,10 @@ loaders <- list(
 )
 
 pixelTypes <- c(
-  "rating grid" = "ratingCell",
-  "pixel grid" = "pixelCell",
-  "loader grid" = "loaderCell",
-  "checkbox grid" = "checkboxCell"
+  "Icons" = "ratingCell",
+  "Solid Pixels" = "pixelCell",
+  "Animated loaders" = "loaderCell",
+  "Checkboxes" = "checkboxCell"
 )
 
 gridSizes <- c(

@@ -36,7 +36,7 @@ function(session, input, output) {
 
   observeEvent(input$gridType, {
     output$pixelType <- renderUI({
-      darkify(selectInput,"rateType", "Pixel type", modifyList(list("Randomize" = "random"), icons)) %>%
+      darkify(selectInput,"rateType", "Icon type", modifyList(list("Randomize" = "random"), icons)) %>%
       tagAppendAttributes(class = ifelse(input$gridType != "ratingCell", "hidden", ""))
     })
   })

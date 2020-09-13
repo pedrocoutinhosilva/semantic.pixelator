@@ -39,13 +39,8 @@ semanticPage(
           darkify(
             selectInput,
             "gridType",
-            "Pixel grid type",
-            c(
-              "rating grid" = "ratingCell",
-              "pixel grid" = "pixelCell",
-              "loader grid" = "loaderCell",
-              "checkbox grid" = "checkboxCell"
-            )
+            "Grid type",
+            pixelTypes
           ),
           uiOutput("pixelType"),
           uiOutput("loaderType"),
