@@ -14,16 +14,16 @@ cssCellRules <- function() {
         ")
       }), collapse = "")
     }), collapse = "")
-  )  
+  )
 }
 
 appDependencies <- function() {
   tagList(
-    tags$link(rel = "stylesheet", href = "styles.css"),
-    tags$script(src = "dom-to-image.min.js"),
-    tags$script(src = "filesaver.js"),
-    tags$script(src = "downloader.js"),
-    tags$script(src = "palette.js"),
+    tags$link(rel = "stylesheet", href = "styles/styles.css"),
+    tags$script(src = "scripts/dom-to-image.min.js"),
+    tags$script(src = "scripts/filesaver.js"),
+    tags$script(src = "scripts/downloader.js"),
+    tags$script(src = "scripts/palette.js"),
     cssCellRules()
   )
 }
