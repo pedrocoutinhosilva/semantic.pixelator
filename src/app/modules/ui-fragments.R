@@ -88,7 +88,7 @@ checkboxCell <- function(height, width, ...) {
   checkbox_input(paste0('pixel_', height, '_', width), is_marked = FALSE)
 }
 
-generateGrid <- function(baseSize, cellCallback, ...) {
+generateGrid <- function(baseSize, cellCallback, thumbnailSize, ...) {
   gridPanel(
     rows = glue("repeat({thumbnailSize}, 20px)"),
     columns = glue("repeat({thumbnailSize}, 20px)"),

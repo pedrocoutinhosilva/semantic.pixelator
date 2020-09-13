@@ -38,6 +38,12 @@ semanticPage(
 
           darkify(
             selectInput,
+            "gridSize",
+            "Grid size",
+            gridSizes
+          ),
+          darkify(
+            selectInput,
             "gridType",
             "Grid type",
             pixelTypes

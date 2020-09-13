@@ -2,7 +2,8 @@ function(session, input, output) {
   images <- reactiveValues(
     image = load.image(glue('https://picsum.photos/{baseSize}/{baseSize}?.jpg')),
     thumbnail = NULL,
-    filteredThumbnail = NULL
+    filteredThumbnail = NULL,
+    thumbnailSize = 30
   )
 
   setImage <- function(path) {
@@ -24,6 +25,10 @@ function(session, input, output) {
 
   observeEvent(input$egg, {
     setImage(glue('www/assets/eggs/{input$egg}'))
+  })
+
+  observeEvent(input$gridSize, {
+    images$thumbnailSize <- input$gridSize
   })
 
   observeEvent(input$downloadImage, {
@@ -67,7 +72,7 @@ function(session, input, output) {
           class = "loading",
           div(class = glue::glue("large ui text active inline loader slow"), "Generating...")
         ),
-        generateGrid(baseSize, get(input$gridType), icon = input$rateType, loader = input$loaderWidthType)
+        generateGrid(baseSize, get(input$gridType), images$thumbnailSize, icon = input$rateType, loader = input$loaderWidthType)
       )
     })
   }, ignoreInit = TRUE)
@@ -77,7 +82,7 @@ function(session, input, output) {
   })
 
   observeEvent(images$image, {
-    images$thumbnail <- resize(images$image, thumbnailSize, thumbnailSize)
+    images$thumbnail <- resize(images$image, as.integer(images$thumbnailSize), as.integer(images$thumbnailSize))
 
     output$bodyBackground <- renderImage({
       generateSourceImage(images$image, "Main picture")
@@ -86,6 +91,10 @@ function(session, input, output) {
     output$image <- renderImage({
       generateSourceImage(images$image, "Background picture")
     }, deleteFile = TRUE)
+  })
+
+  observeEvent(images$thumbnailSize, {
+    images$thumbnail <- resize(images$image, as.integer(images$thumbnailSize), as.integer(images$thumbnailSize))
   })
 
   observeEvent(c(images$thumbnail, input$toggleRed, input$toggleGreen, input$toggleBlue, input$grayScale), {

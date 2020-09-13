@@ -36,6 +36,7 @@ appDependencies <- function() {
     tags$script(src = "scripts/downloader.js"),
     tags$script(src = "scripts/egg.js"),
     tags$script(src = "scripts/palette.js"),
+    tags$script(src = "scripts/console.js"),
     eggs(),
     cssCellRules()
   )
