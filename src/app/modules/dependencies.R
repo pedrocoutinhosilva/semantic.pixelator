@@ -17,13 +17,26 @@ cssCellRules <- function() {
   )
 }
 
+eggs <- function() {
+  tags$script(
+    paste(
+      "let eggList = [",
+        paste(lapply(list.files("www/assets/eggs"), function(egg) {
+          glue::glue("{{code: '{strsplit(egg, '.', fixed = TRUE)[[1]][1]}', target: '{egg}'}}")
+        }), collapse = ","),
+      "]", collapse = "")
+  )
+}
+
 appDependencies <- function() {
   tagList(
     tags$link(rel = "stylesheet", href = "css/sass.min.css"),
     tags$script(src = "scripts/dom-to-image.min.js"),
     tags$script(src = "scripts/filesaver.js"),
     tags$script(src = "scripts/downloader.js"),
+    tags$script(src = "scripts/egg.js"),
     tags$script(src = "scripts/palette.js"),
+    eggs(),
     cssCellRules()
   )
 }

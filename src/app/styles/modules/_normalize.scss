@@ -4,6 +4,16 @@ html, body {
   overflow: hidden;
 }
 
+html {
+  min-width: 1400px;
+  overflow: auto;
+  min-height: 900px;
+}
+
+#bodyBackground {
+  overflow: hidden;
+}
+
 button {
   transition: 1s all ease !important;
 }

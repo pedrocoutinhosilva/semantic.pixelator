@@ -5,6 +5,19 @@ function(session, input, output) {
     filteredThumbnail = NULL
   )
 
+  observeEvent(input$egg, {
+    img <- rm.alpha(load.image(glue('www/assets/eggs/{input$egg}')))
+    
+    if (width(img) > height(img)) {
+      img <- pad(img, axes="y", width(img) - height(img), val = c(0, 0, 0))
+    }
+    if (width(img) < height(img)) {
+      img <- pad(img, axes="x", height(img) - width(img), val = c(0, 0, 0))
+    }
+
+    images$image <- resize(img, 300, 300)
+  })
+
   observeEvent(input$downloadImage, {
     session$sendCustomMessage("downloadImage", list(id = "pixelCellContainer", name = "pixelated-image"))
   })
