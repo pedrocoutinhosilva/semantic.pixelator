@@ -1,3 +1,7 @@
+pageBackground <- function() {
+  imageOutput("bodyBackground") %>% tagAppendAttributes(class = "body-background")
+}
+
 darkify <- function(callback, ...) {
   callback(...) %>% tagAppendAttributes(class = "inverted", type = "inverted")
 }
@@ -21,21 +25,6 @@ averageCard <- function(value, title, color) {
     )
   )
 }
-
-cssVariableRules <- paste(lapply(c(1:thumbnailSize), function(height) {
-  paste(lapply(c(1:thumbnailSize), function(width) {
-    glue::glue("
-      #{paste0('pixel_', height, '_', width)}.ui.loader:after,
-      #{paste0('pixel_', height, '_', width)}.ui.rating .active.icon {{
-        color: var(--color-{height}-{width}) !important;
-      }}
-      #{paste0('pixel_', height, '_', width)}.ui.placeholder,
-      input#{paste0('pixel_', height, '_', width)}~label:before{{
-        background-color: var(--color-{height}-{width}) !important;
-      }}
-    ")
-  }), collapse = "")
-}), collapse = "")
 
 pixelCell <- function(height, width, ...) {
   div(id = paste0('pixel_', height, '_', width), class = "ui placeholder")

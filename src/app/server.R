@@ -87,7 +87,7 @@ function(session, input, output) {
     }
   })
 
-  observeEvent(input$generatePalette, {
+  observeEvent(c(images$filteredThumbnail, input$generatePalette), {
     newPalette <- paletteValues(images$filteredThumbnail, 5)
 
     output$paletteColors <- renderUI({

@@ -1,12 +1,6 @@
 semanticPage(
-  tags$link(rel = "stylesheet", href = "styles.css"),
-  tags$script(src = "dom-to-image.min.js"),
-  tags$script(src = "filesaver.js"),
-  tags$script(src = "downloader.js"),
-  tags$script(src = "palette.js"),
-  tags$style(cssVariableRules),
-
-  imageOutput("bodyBackground") %>% tagAppendAttributes(class = "body-background"),
+  appDependencies(),
+  pageBackground(),
 
   gridPanel(
     columns = "350px 1fr",

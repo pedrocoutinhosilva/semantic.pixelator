@@ -16,3 +16,17 @@ loaders <- list(
   "Double line" = "double",
   "Single line" = "single"
 )
+
+pixelTypes <- c(
+  "rating grid" = "ratingCell",
+  "pixel grid" = "pixelCell",
+  "loader grid" = "loaderCell",
+  "checkbox grid" = "checkboxCell"
+)
+
+gridSizes <- c(
+  "30x30" = 30,
+  "20x20" = 20,
+  "10x10" = 10,
+  "5x5" = 5
+)
