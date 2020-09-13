@@ -26,7 +26,11 @@ semanticPage(
         gap = "15px",
         rows = "50px 322px 1fr 40px 120px",
 
-        darkify(action_button, "reload", "Randomize image"),
+        div(
+          id = "image-picker-buttons",
+          darkify(fileInput, "upload", label = "", buttonLabel = "Upload image", type = "file", accept = "image/png, image/jpeg"),
+          darkify(action_button, "reload", "Randomize image")
+        ),
         imageOutput("image"),
 
         div(

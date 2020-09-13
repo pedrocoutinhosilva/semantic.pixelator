@@ -1,3 +1,49 @@
+#image-picker-buttons {
+  display: flex;
+
+  .form-group {
+    width: 40%;
+    margin-right: 10%;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+    border-radius: 5px;
+    font-weight: bolder;
+    cursor: pointer;
+    position: relative;
+
+    label {
+      cursor: pointer;
+    }
+  }
+
+  #upload_progress.active:before {
+    content: "\f1ce";
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    margin: auto;
+    font-family: Icons;
+    font-size: 16px;
+    animation: loader .6s infinite linear;
+    animation-duration: 1.9s;
+  }
+
+  #upload_progress .progress-bar,
+  input[type=text] {
+    display: none;
+  }
+
+  button {
+    width: 50%;
+  }
+}
+
 #download-message {
   position: absolute;
   right: 20px;

@@ -5,9 +5,9 @@ function(session, input, output) {
     filteredThumbnail = NULL
   )
 
-  observeEvent(input$egg, {
-    img <- rm.alpha(load.image(glue('www/assets/eggs/{input$egg}')))
-    
+  setImage <- function(path) {
+    img <- rm.alpha(load.image(path))
+
     if (width(img) > height(img)) {
       img <- pad(img, axes="y", width(img) - height(img), val = c(0, 0, 0))
     }
@@ -16,6 +16,14 @@ function(session, input, output) {
     }
 
     images$image <- resize(img, 300, 300)
+  }
+
+  observeEvent(input$upload, {
+    setImage(input$upload$datapath)
+  })
+
+  observeEvent(input$egg, {
+    setImage(glue('www/assets/eggs/{input$egg}'))
   })
 
   observeEvent(input$downloadImage, {

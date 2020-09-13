@@ -47,8 +47,8 @@ pageBackground <- function() {
   imageOutput("bodyBackground") %>% tagAppendAttributes(class = "body-background")
 }
 
-darkify <- function(callback, ...) {
-  callback(...) %>% tagAppendAttributes(class = "inverted", type = "inverted")
+darkify <- function(callback, ..., type = "inverted") {
+  callback(...) %>% tagAppendAttributes(class = "inverted", type = type)
 }
 
 paletteCell <- function(index) {
