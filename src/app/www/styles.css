@@ -8,6 +8,14 @@ button {
   transition: 1s all ease !important;
 }
 
+#download-message {
+  position: absolute;
+  right: 20px;
+  top: -25px;
+  font-size: 130%;
+  font-weight: bolder;
+}
+
 .palette-cell {
   position: relative;
 }

@@ -100,6 +100,8 @@ semanticPage(
 
         div(),
 
+        div(id = "download-message"),
+
         darkify(action_button, "downloadPalette", "Download Palette"),
         darkify(action_button, "downloadImage", "Download Image")
       )
