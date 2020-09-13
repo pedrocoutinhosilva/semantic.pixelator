@@ -5,7 +5,7 @@ library(glue)
 library(shiny.semantic)
 library(imager)
 library(stringi)
-library(shiny.grid)
+library(shiny.grid) #devtools::install_github("pedrocoutinhosilva/shiny.grid")
 
 source("modules/dependencies.R")
 source("modules/options.R")
