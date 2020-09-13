@@ -7,7 +7,3 @@ Upload your own picture or use the random button to start. You can then use the 
 After you find a composition that you like, you can use the palette generator to generate a color palette based on the result, as well as download both the current palette details and the generated composition.
 
 Have fun!
-
-<div style = "color: transparent">
-There might also be some other way to load images. Check around and see if you can find any clues :)
-</div>
