@@ -90,7 +90,7 @@ semanticPage(
 
         darkify(action_button, "generatePalette", "New Palette"),
 
-        div(),
+        div(class = "spacer"),
 
         gridPanel(
           id = "generatedPalette",
@@ -100,7 +100,7 @@ semanticPage(
           lapply(1:5, function(index) {paletteCell(index)})
         ),
 
-        div(),
+        div(class = "spacer"),
 
         div(id = "download-message"),
 
