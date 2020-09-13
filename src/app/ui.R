@@ -2,6 +2,9 @@ semanticPage(
   appDependencies(),
   pageBackground(),
 
+  helpModal(),
+
+
   gridPanel(
     columns = "350px 1fr",
     rows = "75px 1fr",

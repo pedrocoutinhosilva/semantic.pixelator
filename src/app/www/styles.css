@@ -8,12 +8,81 @@ button {
   transition: 1s all ease !important;
 }
 
+.project-details {
+  display: flex;
+  padding: 20px;
+}
+
+.project-details > * {
+  width: 40%;
+}
+.project-details > .author {
+  margin-right: 10%;
+}
+.project-details > .repo {
+  margin-left: 10%;
+}
+.project-details .avatar {
+  display: flex;
+  padding-bottom: 10px;
+}
+.project-details .avatar img {
+  height: 20px;
+}
+.project-details .avatar p {
+  line-height: 20px;
+  padding-left: 10px;
+}
+
+.project-details .type {
+  border-bottom: 1px solid gray;
+}
+
+#help-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: transform 0s none;
+  margin: auto;
+  border: 1px solid white;
+}
+
+#help-modal .content {
+  min-height: 233px;
+}
+#help-modal .content .message {
+  padding: 20px;
+  font-size: 110%;
+  border-bottom: 1px solid;
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+#help-modal .content .title {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+#help-modal .actions {
+  background: transparent;
+}
+
 #download-message {
   position: absolute;
   right: 20px;
   top: -25px;
   font-size: 130%;
   font-weight: bolder;
+}
+
+#help-open-button {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 1000;
 }
 
 .palette-cell {

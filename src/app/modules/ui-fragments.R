@@ -1,3 +1,48 @@
+linkIcon <- function(icon, color, link) {
+  tags$a(icon(class = glue::glue("large {icon}"), style = glue::glue("color: {color}")), target = "_blank", href = link)
+}
+
+helpModal <- function() {
+  tagList(
+    div(
+      id = "help-open-button",
+      class = "ui teal tertiary button",
+      tags$i(class="info circle icon"), "About Pixelator..."
+    ),
+    modal(
+      div(
+        div(class = "title", "About Semantic Pixelator"),
+        div(class = "message",
+          p("Generate and save diferent compositions based on semantic/fomantic ui elements!"),
+          p("Use the sidebar to load diferent images and pick the settings for your composition."),
+          p("On the right side you can view the resulting composition, as well as generate diferent color palettes and download the results.")
+        ),
+        div(
+          class = "inverted ui segment project-details",
+          div(class = "author", p(class = "type", "About the author"),
+            div(
+              class = "avatar",
+              tags$img(src = "assets/avatar.jpeg"),
+              p("Pedro Silva")
+            ),
+            linkIcon("twitter", "#1da1f2", "https://twitter.com/sparktuga"),
+            linkIcon("linkedin in", "#0077b5", "https://www.linkedin.com/in/pedrocoutinhosilva/"),
+            linkIcon("github alternate", "#767676", "https://github.com/pedrocoutinhosilva")
+          ),
+          div(class = "repo", p(class = "type", "Pixelator Project"),
+            p(style = "line-height: 20px; margin-bottom: 10px;", "Entry for the Appsilon semantic competition 2020"),
+            linkIcon("github", "#767676", "https://github.com/pedrocoutinhosilva/semantic.pixelator")
+          )
+        )
+      ),
+      footer = div(class = "inverted positive teal ui button", "Return"),
+      id = "help-modal",
+      class = "inverted",
+      target = "help-open-button"
+    )
+  )
+}
+
 pageBackground <- function() {
   imageOutput("bodyBackground") %>% tagAppendAttributes(class = "body-background")
 }
