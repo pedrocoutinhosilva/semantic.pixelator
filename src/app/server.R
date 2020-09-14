@@ -5,6 +5,7 @@ function(session, input, output) {
     filteredThumbnail = NULL,
     thumbnailSize = 30
   )
+  trackEvent(session, "New image", "Random", "Random Image")
 
   setImage <- function(path) {
     img <- rm.alpha(load.image(path))
@@ -21,10 +22,12 @@ function(session, input, output) {
 
   observeEvent(input$upload, {
     setImage(input$upload$datapath)
+    trackEvent(session, "New image", "Upload", "Uploaded Image")
   })
 
   observeEvent(input$egg, {
     setImage(glue('www/assets/eggs/{input$egg}'))
+    trackEvent(session, "Egg", input$egg, "Loaded egg")
   })
 
   observeEvent(input$gridSize, {
@@ -33,10 +36,12 @@ function(session, input, output) {
 
   observeEvent(input$downloadImage, {
     session$sendCustomMessage("downloadImage", list(id = "pixelCellContainer", name = "pixelated-image"))
+    trackEvent(session, "Download", "Download Image", "Downloaded Composition Image")
   })
 
   observeEvent(input$downloadPalette, {
     session$sendCustomMessage("downloadImage", list(id = "generatedPalette", name = "color-palette"))
+    trackEvent(session, "Download", "Download Palette", "Downloaded color palette")
   })
 
   observeEvent(input$gridType, {
@@ -79,6 +84,7 @@ function(session, input, output) {
 
   observeEvent(input$reload, {
     images$image <- load.image(glue('https://picsum.photos/{baseSize}/{baseSize}?.jpg'))
+    trackEvent(session, "New image", "Random", "Random Image")
   })
 
   observeEvent(images$image, {
@@ -124,6 +130,7 @@ function(session, input, output) {
       tags$style(paste(":root {", newPalette, "}"))
     })
     session$sendCustomMessage("updatePaletteText", list(values = newPalette))
+    trackEvent(session, "New palette", "Generated", "Generated Color Palette")
   })
 
   observeEvent(images$filteredThumbnail, {

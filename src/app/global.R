@@ -10,6 +10,7 @@ library(shiny.grid) #devtools::install_github("pedrocoutinhosilva/shiny.grid")
 # Source required scrips
 source("modules/dependencies.R")
 source("modules/options.R")
+source("modules/tracker.R")
 
 source("modules/pixel-grid.R")
 source("modules/color-palette.R")
