@@ -1,0 +1,18 @@
+{
+  "name": "Semantic Pixelator",
+  "short_name": "Semantic Pixelator",
+  "start_url": "https://sparktuga.shinyapps.io/Pixelator/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Semantic Pixelator",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
+

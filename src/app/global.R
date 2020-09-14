@@ -5,7 +5,8 @@ library(glue)
 library(shiny.semantic)
 library(imager)
 library(stringi)
-library(shiny.grid) #devtools::install_github("pedrocoutinhosilva/shiny.grid")
+library(shiny.grid) # devtools::install_github("pedrocoutinhosilva/shiny.grid")
+library(shiny.pwa) # devtools::install_github('pedrocoutinhosilva/shiny.pwa')
 
 # Source required scrips
 source("modules/dependencies.R")

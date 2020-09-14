@@ -2,11 +2,12 @@
   body {
     padding: 0 15px 0 0 !important;
   }
-  
+
   #main-page {
     min-width: 0px;
     grid-template-columns: 90vw 90vw !important;
     height: 100vh !important;
+    gap: 5px !important;
 
     .pixel-grid {
       overflow: hidden;
