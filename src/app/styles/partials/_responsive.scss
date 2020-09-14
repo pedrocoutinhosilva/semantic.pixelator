@@ -5,13 +5,13 @@
 
   #main-page {
     min-width: 0px;
-    grid-template-columns: 90vw 90vw !important;
+    grid-template-columns: 88vw 90vw !important;
     height: 100vh !important;
-    gap: 5px !important;
 
     .pixel-grid {
       overflow: hidden;
       grid-template-rows: auto 200px !important;
+      padding: 0 !important;
 
       .grid-wrapper {
         overflow: hidden;
@@ -29,6 +29,11 @@
 
         #generatePalette {
           order: 0;
+          padding: 10px !important;
+        }
+
+        #downloadImage {
+          padding: 10px !important;
         }
 
         .spacer {
