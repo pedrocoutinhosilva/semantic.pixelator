@@ -7,12 +7,19 @@ thumbnailSize <- round(baseSize/10)
 
 #' List of semantic icons available for icon based grids.
 icons <- list(
-  "Stars" = "star",
-  "Clouds" = "cloud",
-  "Cats" = "cat",
-  "Circles" = "circle",
-  "Fishes" = "fish",
-  "Apples" = "fruit-apple"
+  "Star" = "star",
+  "Cloud" = "cloud",
+  "Cat" = "cat",
+  "Kiwi" = "kiwi bird",
+  "Fish" = "fish",
+  "Horse" = "horse head",
+  "Circle" = "circle",
+  "Apple" = "fruit-apple",
+  "Bread" = "bread slice",
+  "Hotdog" = "hotdog",
+  "Ghost" = "ghost",
+  "Lemon" = "lemon",
+  "Leaf" = "leaf"
 )
 
 #' List of semantic loader types available for loader based grids.
