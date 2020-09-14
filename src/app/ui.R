@@ -1,7 +1,6 @@
 semanticPage(
   appDependencies(),
   pageBackground(),
-  helpModal(),
 
   gridPanel(
     id = "main-page",
@@ -77,6 +76,8 @@ semanticPage(
       columns = "1fr",
       rows = "1fr 100px",
       gap = "15px",
+
+      helpModal(),
 
       div(class = "background-gradient-main"),
 
