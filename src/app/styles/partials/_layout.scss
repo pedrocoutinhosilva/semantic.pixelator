@@ -19,7 +19,12 @@
 }
 
 #main-page {
-  height: calc(100% - 10px) !important;  
+  height: 100%;
+  width: 100%;
+  display: grid;
+  min-height: 900px;
+  overflow: auto;
+  min-width: 1400px;
 }
 
 #randomize,
