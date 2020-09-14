@@ -5,8 +5,8 @@ account: sparktuga
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2796639
-bundleId: 3624472
+bundleId: 3627018
 url: https://sparktuga.shinyapps.io/Pixelator/
-when: 1600010670.85549
+when: 1600082861.28636
 asMultiple: FALSE
 asStatic: FALSE

@@ -1,3 +1,10 @@
+#' Generate css rules based on css variables for diferent generated grid elements.
+#' Includes rules for changing the colors of semantic loaders, checkboxes, icons and placeholders.
+#'
+#' @return A UI style tag that can be passed to the [shinyUI] function.
+#'
+#' @family dependencies functions
+#' @seealso [eggs(), appDependencies()]
 cssCellRules <- function() {
   tags$style(
     paste(lapply(c(1:thumbnailSize), function(height) {
@@ -17,6 +24,12 @@ cssCellRules <- function() {
   )
 }
 
+#' Generates a list of options for easter eggs in the application, based of the www/assets/eggs folder.
+#'
+#' @return A UI script tag that can be passed to the [shinyUI] function.
+#'
+#' @family dependencies functions
+#' @seealso [cssCellRules(), appDependencies()]
 eggs <- function() {
   tags$script(
     paste(
@@ -28,6 +41,12 @@ eggs <- function() {
   )
 }
 
+#' Generates a tag list with all the custom app dependencies required for the application to work.
+#'
+#' @return A UI tagList that can be passed to the [shinyUI] function.
+#'
+#' @family dependencies functions
+#' @seealso [cssCellRules(), eggs()]
 appDependencies <- function() {
   tagList(
     tags$link(rel = "stylesheet", href = "css/sass.min.css"),

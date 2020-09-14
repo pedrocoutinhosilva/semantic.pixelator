@@ -72,7 +72,7 @@ function(session, input, output) {
           class = "loading",
           div(class = glue::glue("large ui text active inline loader slow"), "Generating...")
         ),
-        generateGrid(baseSize, get(input$gridType), images$thumbnailSize, icon = input$rateType, loader = input$loaderWidthType)
+        generateGrid(get(input$gridType), images$thumbnailSize, icon = input$rateType, loader = input$loaderWidthType)
       )
     })
   }, ignoreInit = TRUE)

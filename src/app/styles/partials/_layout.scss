@@ -1,5 +1,7 @@
 .sidebar-wrapper {
   position: relative;
+  height: 100%;
+  overflow: auto;
 }
 
 .sidebar-container {
@@ -8,6 +10,7 @@
 
 .sidebar-options {
   z-index: 60;
+  padding: 0 10px 10px 0;
 
   & > * > * {
     margin-bottom: 15px;
@@ -22,7 +25,7 @@
   height: 100%;
   width: 100%;
   display: grid;
-  min-height: 900px;
+  min-height: 100vh;
   overflow: auto;
   min-width: 1400px;
 }
@@ -64,14 +67,4 @@
   img {
     width: 100%;
   }
-}
-
-.sidebar-wrapper {
-  height: 100%;
-  overflow: auto;
-}
-
-.sidebar-options {
-  overflow: auto;
-  padding: 0 10px 10px 0;
 }

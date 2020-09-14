@@ -1,9 +1,7 @@
 semanticPage(
   appDependencies(),
   pageBackground(),
-
   helpModal(),
-
 
   gridPanel(
     id = "main-page",
@@ -25,12 +23,12 @@ semanticPage(
       class = "sidebar-wrapper",
       gridPanel(class = "ui raised segment inverted sidebar-container",
         gap = "15px",
-        rows = "35px 322px 1fr 40px 120px",
+        rows = "35px 322px 1fr 40px 100px",
 
         div(
           id = "image-picker-buttons",
           darkify(fileInput, "upload", label = "", buttonLabel = "Upload image", type = "file", accept = "image/png, image/jpeg"),
-          darkify(action_button, "reload", "Randomize image")
+          darkify(action_button, "reload", "Random image")
         ),
         imageOutput("image"),
 
@@ -66,7 +64,7 @@ semanticPage(
           class = "grid-side ui raised segment inverted",
           rows = "repeat(3, 20px)",
           columns = "100%",
-          gap = "15px",
+          gap = "5px",
 
           div(class = "image-setting", darkify(toggle, "toggleRed", "Red channel")),
           div(class = "image-setting", darkify(toggle, "toggleGreen", "Green channel")),
