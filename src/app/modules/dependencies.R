@@ -59,7 +59,7 @@ appDependencies <- function() {
     tags$script(src = "scripts/palette.js"),
     tags$script(src = "scripts/console.js"),
     tags$script(src = "scripts/responsive.js"),
-    supportPWA("https://sparktuga.shinyapps.io", "Semantic Pixelator", "Pixelator", "www/icon.png"),
+    pwa("https://sparktuga.shinyapps.io/Pixelator", title = "Semantic Pixelator", icon = "www/icon.png"),
     eggs(),
     cssCellRules()
   )

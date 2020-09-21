@@ -1,5 +1,5 @@
 #' Sets up a local semantic CDN.
-options("shiny.custom.semantic.cdn" = "semantic")
+options("shiny.semantic.local" = TRUE)
 
 #' Base sizes for the images and the generated grids.
 baseSize <- 300
