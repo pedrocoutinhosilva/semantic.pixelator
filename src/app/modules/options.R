@@ -41,7 +41,7 @@ pixelTypes <- c(
 #'   but become very heavy given the amount of HTML elements added to the browser.
 gridSizes <- c(
   "30x30" = 30,
-  "25z25" = 25,
+  "25x25" = 25,
   "20x20" = 20,
   "15x15" = 15,
   "10x10" = 10,
